@@ -1,0 +1,23 @@
+@import url(https://allfont.net/allfont.css?fonts=comic-sans-ms);
+@import "./settings";
+
+/* Deractives */
+
+@mixin defaultPosition-circles_x {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $background_color no-repeat;
+    min-height: 100vh;
+}
