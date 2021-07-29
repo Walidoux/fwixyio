@@ -8,11 +8,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="styles/main.css" />
-    
+
     <script defer src="app.js"></script>
   </head>
 
   <body>
-    
+    <nav>
+      <img
+        src="assets/Logo.svg"
+        draggable="false"
+        class="logo"
+        alt="Logo du site Fwixyio"
+      />
+      <img
+        src="assets/Fwixyio.svg"
+        draggable="false"
+        class="logo_text"
+        alt="Logo texte du site Fwixyio"
+      />
+    </nav>
+    <main>
+      <section class="board" id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+      </section>
+      <section class="results_section" id="resultSection">
+        <h1 class="result-text_message" id="result-text_message"></h1>
+        <button class="restart_button">Rejouer</button>
+      </section>
+    </main>
   </body>
 </html>

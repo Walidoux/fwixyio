@@ -16,4 +16,191 @@ body {
   background: radial-gradient(100% 100% at 50% 0%, #38364A 0%, #1E1D28 100%) no-repeat;
   min-height: 100vh;
 }
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 40px;
+}
+
+nav .logo_text {
+  margin: 5px 0 0 15px;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Results Section */
+}
+
+main .board {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  /* Circle Styling */
+  /* X Styling */
+  /* On Hover on Both */
+}
+
+main .board .cell {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  cursor: pointer;
+  border: 5px solid white;
+}
+
+main .board .cell:last-child, main .board .cell:nth-child(7), main .board .cell:nth-child(8) {
+  border-bottom: none;
+}
+
+main .board .cell:first-child, main .board .cell:nth-child(2), main .board .cell:nth-child(3) {
+  border-top: none;
+}
+
+main .board .cell:nth-child(3n + 1) {
+  border-left: none;
+}
+
+main .board .cell:nth-child(3n + 3) {
+  border-right: none;
+}
+
+main .board .cell.circle,
+main .board .cell.x {
+  cursor: not-allowed;
+}
+
+main .board .cell.circle::after,
+main .board.circle .cell:not(.x):not(.circle):hover::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 75px;
+  width: 75px;
+  -webkit-filter: drop-shadow(0px 0px 8px #ffb800);
+          filter: drop-shadow(0px 0px 8px #ffb800);
+  border-radius: 50%;
+  border: 10px solid #ffb800;
+}
+
+main .board .cell.x::after,
+main .board .cell.x::before,
+main .board.x .cell:not(.x):not(.circle):hover::after,
+main .board.x .cell:not(.x):not(.circle):hover::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 120px;
+  width: 15px;
+  border-radius: 30px;
+  opacity: 1;
+  background: -webkit-gradient(linear, left top, left bottom, from(#054c9d), to(#0071dd));
+  background: linear-gradient(180deg, #054c9d 0%, #0071dd 100%);
+  -webkit-filter: drop-shadow(0px 0px 8px #00509d);
+          filter: drop-shadow(0px 0px 8px #00509d);
+}
+
+main .board .cell.x::after,
+main .board.x .cell:not(.x):not(.circle):hover::after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+main .board .cell.x::before,
+main .board.x .cell:not(.x):not(.circle):hover::before {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+main .board.x .cell:not(.x):not(.circle):hover::after,
+main .board.x .cell:not(.x):not(.circle):hover::before,
+main .board.circle .cell:not(.x):not(.circle):hover::after {
+  opacity: 0.2;
+}
+
+main .results_section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "comic sans ms", sans-serif;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+main .results_section .result-text_message {
+  color: white;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+main .results_section .restart_button {
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  background: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+main .results_section .restart_button:hover {
+  color: white;
+  background: transparent;
+}
+
+main .results_section.active {
+  opacity: 1;
+  visibility: visible;
+}
 /*# sourceMappingURL=main.css.map */
